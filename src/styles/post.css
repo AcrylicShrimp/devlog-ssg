@@ -1,0 +1,67 @@
+.article > *:first-child {
+	@apply mt-0;
+}
+
+.article h1,
+.article h2 {
+	@apply mt-12 mb-4 font-bold text-xl text-lightblue;
+}
+
+.article h3,
+.article h4 {
+	@apply mt-6 mb-2 font-bold text-lg text-lightblue;
+}
+
+.article h5,
+.article h6 {
+	@apply mt-4 mb-1 font-bold text-lg text-lightblue;
+}
+
+.article p {
+	@apply text-base text-light leading-8;
+}
+
+.article a {
+	color: unset;
+	text-decoration: none;
+}
+
+.article img {
+	@apply block mx-auto my-6 rounded max-w-full;
+}
+
+.article code {
+	@apply text-lightblue;
+}
+
+.article pre {
+	@apply my-4 p-4 bg-black rounded overflow-x-auto;
+}
+
+.article pre ::-moz-selection {
+	@apply bg-red text-white;
+}
+
+.article pre ::selection {
+	@apply bg-red text-white;
+}
+
+.article pre > code {
+	@apply text-lightgray;
+}
+
+.article ol {
+	@apply my-4 pl-8 text-gray list-decimal;
+}
+
+.article ul {
+	@apply my-4 pl-8 text-gray list-disc;
+}
+
+.article li + li {
+	@apply mt-2;
+}
+
+.article hr {
+	@apply block mt-2 mb-2 border-0 w-full h-px bg-lightblue;
+}

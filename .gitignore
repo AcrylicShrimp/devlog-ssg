@@ -1,0 +1,8 @@
+/___ELDER___/
+/node_modules/
+/dist/
+/dist-opt/
+.DS_Store
+.env
+deploy.sh
+.DS_Store

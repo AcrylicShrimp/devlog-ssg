@@ -1,0 +1,16 @@
+diff --git a/node_modules/@elderjs/plugin-sitemap/index.js b/node_modules/@elderjs/plugin-sitemap/index.js
+index b5d5b8b..4c041f8 100644
+--- a/node_modules/@elderjs/plugin-sitemap/index.js
++++ b/node_modules/@elderjs/plugin-sitemap/index.js
+@@ -148,7 +148,10 @@ const plugin = {
+ 
+                 let xml = SITEMAP_HEADER;
+                 routeRequests.forEach((request) => {
+-                  const permalink = routes[request.route].permalink({helpers, request, settings });
++                  let permalink = routes[request.route].permalink({helpers, request, settings });
++
++                  if (permalink !== '/')
++                    permalink += 'index.html';
+ 
+                   xml += `<url><loc>${plugin.config.origin}${permalink.replace(/&/g, '&amp;')}</loc><lastmod>${formatDate(
+                     request.lastUpdate,

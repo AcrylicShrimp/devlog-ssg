@@ -65,3 +65,7 @@
 .article hr {
 	@apply block mt-2 mb-2 border-0 w-full h-px bg-lightblue;
 }
+
+.article .math.math-display {
+	@apply text-light;
+}

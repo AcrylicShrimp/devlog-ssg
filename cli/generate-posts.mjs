@@ -5,9 +5,11 @@ import { toHtml } from 'hast-util-to-html';
 import { toText } from 'hast-util-to-text';
 import { join } from 'path';
 import remarkGFM from 'remark-gfm';
+import remarkMath from 'remark-math';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import { unified } from 'unified';
 import rehypeShiftHeading from 'rehype-shift-heading';
@@ -36,12 +38,12 @@ import rehypeShiftHeading from 'rehype-shift-heading';
 				await fs.writeFile(join(dir, 'metadata.json'), JSON.stringify(meta), 'utf-8');
 			}
 
-			const mdast = unified().use(remarkParse).parse(content);
+			const mdast = unified().use(remarkParse).use(remarkGFM).use(remarkMath).parse(content);
 			const hast = await unified()
-				.use(remarkGFM)
 				.use(remarkRehype)
 				.use(rehypeRaw)
 				.use(rehypeShiftHeading, { shift: 1 })
+				.use(rehypeKatex)
 				.use(rehypeHighlight)
 				.run(mdast);
 

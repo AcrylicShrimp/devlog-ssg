@@ -15,6 +15,7 @@
 </script>
 
 <style global lang="postcss">
+	@import '../styles/katex.min.css';
 	@import '../styles/post.css';
 	@import '../styles/post-highlight-halflife.css';
 </style>

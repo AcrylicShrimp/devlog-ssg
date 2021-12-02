@@ -51,11 +51,15 @@
 }
 
 .article ol {
-	@apply my-4 pl-8 text-gray list-decimal;
+	@apply my-4 pl-8 text-light list-decimal;
 }
 
 .article ul {
-	@apply my-4 pl-8 text-gray list-disc;
+	@apply my-4 pl-8 text-light list-disc;
+}
+
+.article li::marker {
+	@apply text-lightblue;
 }
 
 .article li + li {

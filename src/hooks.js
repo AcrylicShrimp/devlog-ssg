@@ -31,6 +31,8 @@ const hooks = [
 		run: ({ settings }) => {
 			fs.readdirSync(path.resolve(settings.rootDir, 'posts'), { withFileTypes: true })
 				.filter((dir) => dir.isDirectory())
+				.filter((dir) => dir.name !== '.git')
+				.filter((dir) => dir.name !== 'node_modules')
 				.map((dir) => path.resolve(settings.rootDir, 'posts', dir.name))
 				.forEach((dir) => {
 					const meta = JSON.parse(fs.readFileSync(path.resolve(dir, 'metadata.json'), 'utf-8'));

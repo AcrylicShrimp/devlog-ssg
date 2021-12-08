@@ -18,7 +18,7 @@
 }
 
 .article p {
-	@apply text-base text-light leading-8;
+	@apply text-base text-light leading-7;
 }
 
 .article a {

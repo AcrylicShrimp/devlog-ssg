@@ -10,7 +10,7 @@
 		"build:post": "git submodule update --remote --merge",
 		"build:rollup": "rollup -c",
 		"build:html": "node ./src/build.js",
-		"build:opt": "subfont --root ./dist --canonical-root https://blog.ashrimp.dev/ --output ./dist-opt --inline-css --no-fallbacks --recursive",
+		"build:opt": "subfont --root ./dist --canonical-root https://blog.ashrimp.dev/ --output ./dist-opt --inline-css --no-fallbacks",
 		"dev": "rollup -c -w --no-watch.clearScreen",
 		"watch:tailwind": "postcss src/styles/tailwind.css -o dist/style.css -w",
 		"serve": "node ./src/cleanPublic.js && npm run build:rollup && NODE_ENV=production node ./src/server.js",

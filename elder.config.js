@@ -1,4 +1,6 @@
 require('dotenv').config();
+const path = require('path');
+
 module.exports = {
 	origin: 'https://blog.ashrimp.dev', // TODO: update this. The URL of your site's root, without a trailing slash
 	lang: 'ko',
@@ -32,11 +34,11 @@ module.exports = {
 			origin: 'https://blog.ashrimp.dev',
 			exclude: ['fallback'], // an array of permalinks or permalink prefixes. So you can do ['500'] and it will match /500**
 			lastUpdate: {
-				index: '2021-12-01',
-				about: '2021-12-01',
+				index: '2021-12-08',
+				about: '2021-12-08',
 				post: async ({ query, request }) => {
-					console.log()
-					return new Date('2021-12-01');
+					const post = (await import(path.join(process.cwd(), 'posts', '.gen.js'))).default;
+					return new Date(post.find((post) => (post.slug = request.slug))['modified-at']);
 				},
 			}, // configurable last update for each route type.
 		},

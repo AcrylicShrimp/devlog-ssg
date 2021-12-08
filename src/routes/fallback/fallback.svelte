@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>ashrimp blog - not found</title>
-	<link href={`${settings.origin}${request.permalink}`} rel="canonical" />
+	<link href={`${settings.origin}${request.permalink}index.html`} rel="canonical" />
 	<meta
 		name="description"
 		content="This website is a personal blog of AcrylicShrimp. Most of posts are thinkings and works about programming." />

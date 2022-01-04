@@ -22,7 +22,7 @@
 
 <article>
 	<header>
-		<h1 class="font-bold text-xl text-lightblue">Posts/{title}</h1>
+		<h1 class="font-bold text-xl text-lightblue">{title}</h1>
 		{#if category}
 			<p class="mt-1 text-sm text-gray">
 				Written in {formatDate(writtenAt)}, categoried as

@@ -23,6 +23,10 @@
 
 .article a {
 	color: unset;
+	text-decoration: underline;
+}
+
+.article a:hover {
 	text-decoration: none;
 }
 

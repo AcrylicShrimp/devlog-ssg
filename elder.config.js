@@ -34,11 +34,13 @@ module.exports = {
 			origin: 'https://blog.ashrimp.dev',
 			exclude: ['fallback'], // an array of permalinks or permalink prefixes. So you can do ['500'] and it will match /500**
 			lastUpdate: {
-				index: '2021-12-08',
-				about: '2021-12-08',
+				index: '2022-02-09',
+				about: '2022-02-09',
 				post: async ({ query, request }) => {
 					const post = (await import(path.join(process.cwd(), 'posts', '.gen.js'))).default;
-					return new Date(post.find((post) => (post.slug = request.slug))['modified-at']);
+					return new Date(
+						Math.max(new Date('2022-02-09').getTime(), post.find((post) => (post.slug = request.slug))['modified-at']),
+					);
 				},
 			}, // configurable last update for each route type.
 		},

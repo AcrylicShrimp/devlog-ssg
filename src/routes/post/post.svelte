@@ -7,9 +7,6 @@
 <svelte:head>
 	<title>ashrimp blog - {data.post.title}</title>
 	<link href={`${settings.origin}${request.permalink}index.html`} rel="canonical" />
-	<meta
-		name="description"
-		content="This website is a personal blog of AcrylicShrimp. Most of posts are thinkings and works about programming." />
 </svelte:head>
 
 <Post

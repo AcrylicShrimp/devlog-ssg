@@ -14,11 +14,11 @@
 	}
 </style>
 
-<div class="mt-4 flex flex-col justify-start align-center text-lg">
+<div class="mt-4 flex flex-col justify-start align-center text-sm sm:text-lg">
 	{#each posts as post (post.slug)}
 		<p class="post-item">
-			<span class="text-gray">[{formatDate(post.writtenAt)}]</span>
-			<span class="text-wine">[{post.category}]</span>
+			<span class="text-xs block sm:text-lg sm:inline text-gray">[{formatDate(post.writtenAt)}]</span>
+			<span class="text-xs sm:text-lg text-wine">[{post.category}]</span>
 			<a href={`${helpers.permalinks.post({ slug: post.slug })}index.html`} class="text-yellow hover:underline"
 				>{post.title}</a>
 		</p>

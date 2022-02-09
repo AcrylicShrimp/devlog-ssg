@@ -11,9 +11,9 @@
 	@import '../styles/noto-sans-mono-cjk.css';
 </style>
 
-<div class="p-6 pt-12 md:max-w-screen-lg md:mx-auto">
+<div class="p-1 py-4 sm:p-6 sm:pt-12 md:max-w-screen-lg md:mx-auto">
 	<Header {helpers} />
-	<div class="mt-24 mb-36 max-w-screen-lg">
+	<div class="mt-12 mb-16 sm:mt-24 sm:mb-36 max-w-screen-lg">
 		{@html templateHtml}
 	</div>
 	<Footer />

@@ -32,7 +32,7 @@
 			<p class="mt-1 text-sm text-gray">Written in {formatDate(writtenAt)}</p>
 		{/if}
 	</header>
-	<div class="mt-16 article">
+	<div class="mt-12 sm:mt-16 article">
 		{@html content}
 	</div>
 </article>

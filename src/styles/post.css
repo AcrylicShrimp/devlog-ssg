@@ -30,7 +30,8 @@
 	text-decoration: none;
 }
 
-.article img {
+.article img,
+.article video {
 	@apply block mx-auto my-6 rounded max-w-full;
 }
 

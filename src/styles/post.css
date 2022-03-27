@@ -4,29 +4,34 @@
 
 .article h1,
 .article h2 {
-	@apply mt-12 mb-4 font-bold text-xl text-lightblue;
+	@apply mt-6 mb-2 sm:mt-12 sm:mb-4 font-bold text-xl text-lightblue;
 }
 
 .article h3,
 .article h4 {
-	@apply mt-6 mb-2 font-bold text-lg text-lightblue;
+	@apply mt-4 mb-1 sm:mt-6 sm:mb-2 font-bold text-lg text-lightblue;
 }
 
 .article h5,
 .article h6 {
-	@apply mt-4 mb-1 font-bold text-lg text-lightblue;
+	@apply mt-2 mb-1 sm:mt-4 sm:mb-1 font-bold text-lg text-lightblue;
 }
 
 .article p {
-	@apply text-base text-light leading-7;
+	@apply text-sm sm:text-base text-light leading-5 sm:leading-7;
 }
 
 .article a {
 	color: unset;
+	text-decoration: underline;
+}
+
+.article a:hover {
 	text-decoration: none;
 }
 
-.article img {
+.article img,
+.article video {
 	@apply block mx-auto my-6 rounded max-w-full;
 }
 
@@ -51,11 +56,15 @@
 }
 
 .article ol {
-	@apply my-4 pl-8 text-light list-decimal;
+	@apply my-2 sm:my-4 pl-8 text-light list-decimal;
 }
 
 .article ul {
-	@apply my-4 pl-8 text-light list-disc;
+	@apply my-2 sm:my-4 pl-8 text-light list-disc;
+}
+
+.article li {
+	@apply text-sm sm:text-base;
 }
 
 .article li::marker {
@@ -63,7 +72,7 @@
 }
 
 .article li + li {
-	@apply mt-2;
+	@apply mt-1 sm:mt-2;
 }
 
 .article hr {

@@ -1,6 +1,17 @@
 require('dotenv').config();
 
 const { getRollupConfig } = require('@elderjs/elderjs');
+import inlineSvg from 'rollup-plugin-inline-svg';
+
 const svelteConfig = require('./svelte.config');
 
-module.exports = [...getRollupConfig({ svelteConfig })];
+const configs = getRollupConfig({ svelteConfig });
+
+for (let config of configs)
+	config.plugins.push(
+		inlineSvg({
+			removeTags: true,
+		}),
+	);
+
+module.exports = configs;

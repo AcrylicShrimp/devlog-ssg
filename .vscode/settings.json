@@ -13,6 +13,9 @@
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"[svelte]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"[sass]": {
 		"editor.defaultFormatter": "syler.sass-indented"
 	},

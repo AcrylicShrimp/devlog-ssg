@@ -13,8 +13,8 @@
 
 <div class="p-6 pt-12 md:max-w-screen-lg md:mx-auto">
 	<Header {helpers} />
-	<div class="mt-24 mb-36 max-w-screen-lg">
+	<main class="mt-24 mb-36 max-w-screen-lg">
 		{@html templateHtml}
-	</div>
+	</main>
 	<Footer />
 </div>

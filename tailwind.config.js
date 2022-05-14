@@ -3,6 +3,7 @@ module.exports = {
 	darkMode: false,
 	theme: {
 		colors: {
+			current: 'currentColor',
 			lightblue: '#5090BF',
 			wine: '#CE4972',
 			lightgray: '#CCCCCC',

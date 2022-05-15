@@ -11,7 +11,7 @@
 		"build:post": "git submodule update --remote --merge",
 		"build:rollup": "rollup -c",
 		"build:html": "node ./src/build.js",
-		"build:html-min": "html-minifier-terser --case-sensitive --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --decode-entities --keep-closing-slash --no-newlines-before-tag-close --remove-attribute-quotes --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --use-short-doctype --input-dir ./dist --output-dir ./dist --file-ext html",
+		"build:html-min": "html-minifier-terser --case-sensitive --collapse-boolean-attributes --collapse-whitespace --decode-entities --keep-closing-slash --no-newlines-before-tag-close --remove-attribute-quotes --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --use-short-doctype --input-dir ./dist --output-dir ./dist --file-ext html",
 		"build:opt": "subfont --root ./dist --canonical-root https://blog.ashrimp.dev/ --output ./dist-opt --inline-css --no-fallbacks",
 		"dev": "rollup -c -w --no-watch.clearScreen",
 		"dev2": "http-server ./dist",

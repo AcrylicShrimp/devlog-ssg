@@ -38,7 +38,7 @@
 
 <div class="p-1 py-4 sm:p-6 sm:pt-12 md:max-w-screen-lg md:mx-auto">
 	<Header {helpers} />
-	<main class="mt-12 mb-16 sm:mt-24 sm:mb-36 max-w-screen-lg">
+	<main class="mt-12 mb-20 sm:mt-24 sm:mb-40 max-w-screen-lg">
 		{@html templateHtml}
 	</main>
 	<Footer />

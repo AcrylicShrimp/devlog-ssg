@@ -1,7 +1,7 @@
 <script>
 	import Post from '../../components/Post.svelte';
 
-	export let data, request, settings;
+	export let helpers, data, request, settings;
 </script>
 
 <svelte:head>
@@ -10,6 +10,7 @@
 </svelte:head>
 
 <Post
+	{helpers}
 	title={data.post.title}
 	category={data.post.category}
 	content={data.post.content}

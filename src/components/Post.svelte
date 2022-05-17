@@ -1,4 +1,5 @@
 <script>
+	export let helpers;
 	export let title;
 	export let category;
 	export let content;
@@ -25,7 +26,9 @@
 		<h1 class="font-bold text-xl text-lightblue">{title}</h1>
 		{#if category}
 			<p class="mt-1 text-sm text-gray">
-				Written in {formatDate(writtenAt)}, categoried as <span class="text-wine">{category}</span>
+				Written in {formatDate(writtenAt)}, categoried as
+				<a href={`${helpers.permalinks.cat({ name: category })}index.html`} class="text-wine hover:underline"
+					>{category}</a>
 			</p>
 		{:else}
 			<p class="mt-1 text-sm text-gray">Written in {formatDate(writtenAt)}</p>

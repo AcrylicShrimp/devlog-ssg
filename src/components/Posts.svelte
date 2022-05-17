@@ -32,7 +32,7 @@
 		</article>
 	{:else}
 		<article>
-			<p class="text-gray">No post yet :(</p>
+			<p class="text-gray">No post yet :&#40;</p>
 		</article>
 	{/each}
 </section>

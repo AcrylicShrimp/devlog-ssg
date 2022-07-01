@@ -9,5 +9,9 @@
 	<link href={`${settings.origin}${request.permalink}index.html`} rel="canonical" />
 </svelte:head>
 
-<h1 class="font-bold text-xl text-lightblue">Categories</h1>
-<Categories {helpers} categories={data.categories} />
+<article>
+	<header>
+		<h1 class="font-bold text-xl sm:text-3xl text-lightblue">Categories</h1>
+	</header>
+	<Categories {helpers} categories={data.categories} />
+</article>

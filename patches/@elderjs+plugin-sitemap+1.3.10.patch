@@ -1,5 +1,5 @@
 diff --git a/node_modules/@elderjs/plugin-sitemap/index.js b/node_modules/@elderjs/plugin-sitemap/index.js
-index b5d5b8b..4c041f8 100644
+index b5d5b8b..a2f436c 100644
 --- a/node_modules/@elderjs/plugin-sitemap/index.js
 +++ b/node_modules/@elderjs/plugin-sitemap/index.js
 @@ -148,7 +148,10 @@ const plugin = {

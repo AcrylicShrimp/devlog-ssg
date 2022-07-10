@@ -30,6 +30,10 @@
 	text-decoration: none;
 }
 
+.article blockquote {
+	@apply bg-black border-l-4 border-wine my-2 px-3 py-2;
+}
+
 .article img,
 .article video {
 	@apply block mx-auto my-6 rounded max-w-full;

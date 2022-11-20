@@ -1,3 +1,5 @@
+concurrency: ci-${{ github.ref }}
+
 on:
   workflow_dispatch: # Triggered by a submodule
   push:

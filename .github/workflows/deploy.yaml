@@ -63,6 +63,6 @@ jobs:
 
       - name: Deploy to AWS
         run: |
-          aws s3 rm --recursive s3://${{ AWS_S3_NAME }}
-          aws s3 cp --recursive dist-opt/ s3://${{ AWS_S3_NAME }}/
-          aws cloudfront create-invalidation --distribution-id ${{ AWS_CF_ID }} --paths "/*"
+          aws s3 rm --recursive s3://${{ secrets.AWS_S3_NAME }}
+          aws s3 cp --recursive dist-opt/ s3://${{ secrets.AWS_S3_NAME }}/
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CF_ID }} --paths "/*"

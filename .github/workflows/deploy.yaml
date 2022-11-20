@@ -60,9 +60,6 @@ jobs:
           cp ./dist/robots.txt ./dist-opt
           cp ./dist/sitemap*.xml ./dist-opt
 
-      - name: Setup AWS CLI
-        uses: unfor19/install-aws-cli-action@v1.0.4
-
       - name: Deploy to AWS
         run: |
           aws s3 rm --recursive s3://${{ secrets.AWS_S3_NAME }}

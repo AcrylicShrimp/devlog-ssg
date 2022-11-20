@@ -1,5 +1,3 @@
-concurrency: ci-${{ github.ref }}
-
 on:
   workflow_dispatch: # Triggered by a submodule
   push:
@@ -10,6 +8,7 @@ jobs:
   submodule-update:
     name: Submodule Update
     runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
 
     defaults:
       run:
@@ -37,6 +36,7 @@ jobs:
   deployment:
     name: Deployment
     runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
 
     defaults:
       run:

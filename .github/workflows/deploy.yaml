@@ -1,0 +1,68 @@
+on:
+  workflow_dispatch: # Triggered by a submodule
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  submodule-update:
+    name: Submodule Update
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.CI_TOKEN }}
+          submodules: true
+
+      - name: Git Sumbodule Update
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
+      - name: Commit Update
+        run: |
+          git config --global user.name 'Git bot'
+          git config --global user.email 'bot@noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
+
+  deployment:
+    name: Deployment
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.CI_TOKEN }}
+          submodules: true
+
+      - name: Install Dependuncies
+        run: |
+          npm install
+
+      - name: Build Artifacts
+        run: |
+          npm run build
+          cp ./dist/favicon.ico ./dist-opt
+          cp ./dist/robots.txt ./dist-opt
+          cp ./dist/sitemap*.xml ./dist-opt
+
+      - name: Setup AWS CLI
+        uses: unfor19/install-aws-cli-action@v1.0.4
+
+      - name: Deploy to AWS
+        run: |
+          aws s3 rm --recursive s3://${{ AWS_S3_NAME }}
+          aws s3 cp --recursive dist-opt/ s3://${{ AWS_S3_NAME }}/
+          aws cloudfront create-invalidation --distribution-id ${{ AWS_CF_ID }} --paths "/*"

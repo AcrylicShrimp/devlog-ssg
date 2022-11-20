@@ -64,3 +64,7 @@ jobs:
           aws s3 rm --recursive s3://${{ secrets.AWS_S3_NAME }}
           aws s3 cp --recursive dist-opt/ s3://${{ secrets.AWS_S3_NAME }}/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CF_ID }} --paths "/*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-2

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 
-const lastUpdatedAt = '2022-05-16';
+const lastUpdatedAt = '2022-11-27';
 
 module.exports = {
 	origin: 'https://blog.ashrimp.dev', // TODO: update this. The URL of your site's root, without a trailing slash

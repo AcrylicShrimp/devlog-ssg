@@ -58,6 +58,7 @@ jobs:
           npm run build
           cp ./dist/favicon.ico ./dist-opt
           cp ./dist/robots.txt ./dist-opt
+          cp ./dist/rss.xml ./dist-opt
           cp ./dist/sitemap*.xml ./dist-opt
 
       - name: Deploy to AWS

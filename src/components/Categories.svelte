@@ -2,9 +2,12 @@
 	export let helpers, categories;
 
 	function formatDate(date) {
-		return `${String(date.getFullYear()).padStart(4, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(
-			date.getDate(),
-		).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+		return `${String(date.getUTCFullYear()).padStart(4, '0')}/${String(date.getUTCMonth() + 1).padStart(
+			2,
+			'0',
+		)}/${String(date.getUTCDate()).padStart(2, '0')} ${String(date.getUTCHours()).padStart(2, '0')}:${String(
+			date.getUTCMinutes(),
+		).padStart(2, '0')}:${String(date.getUTCSeconds()).padStart(2, '0')}`;
 	}
 </script>
 

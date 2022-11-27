@@ -14,6 +14,8 @@
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:title" content={settings.title} />
 	<meta name="twitter:description" content={settings.description} />
+	<!-- Naver Site Verification -->
+	<meta name="naver-site-verification" content="aa8852b30cd0b637726970957b8da1f858901c9f" />
 </svelte:head>
 
 <article>

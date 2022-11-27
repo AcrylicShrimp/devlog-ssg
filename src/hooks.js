@@ -47,5 +47,49 @@ const hooks = [
 				});
 		},
 	},
+	{
+		hook: 'buildComplete',
+		name: 'generateRSSForAllPosts',
+		description: 'Generates RSS for all available post routes.',
+		run: async ({ errors, allRequests, settings }) => {
+			if (errors && errors.length) return; // In case of build failure
+
+			if (!String.prototype.encodeXML) {
+				String.prototype.encodeXML = function () {
+					return this.replace(/&/g, '&amp;')
+						.replace(/</g, '&lt;')
+						.replace(/>/g, '&gt;')
+						.replace(/"/g, '&quot;')
+						.replace(/'/g, '&apos;');
+				};
+			}
+
+			const posts = (await import('../posts/.gen.js')).default;
+			const postMap = new Map(posts.map((post) => [post.slug, post]));
+			const requests = allRequests.filter(({ permalink }) => permalink.startsWith('/posts/'));
+			const rss = [
+				'<?xml version="1.0" encoding="UTF-8" ?>',
+				'<rss version="2.0">',
+				'<channel>',
+				`<title>${settings.title.encodeXML()}</title>`,
+				`<link>${settings.origin.encodeXML()}</link>`,
+				`<description>${settings.description.encodeXML()}</description>`,
+			];
+
+			for (const request of requests) {
+				const post = postMap.get(request.slug);
+				rss.push(
+					'<item>',
+					`<title>${post.title.encodeXML()}</title>`,
+					`<link>${settings.origin}${request.permalink}index.html</link>`,
+					`<description>${post.preview.encodeXML()}</description>`,
+					'</item>',
+				);
+			}
+
+			rss.push('</channel>', '</rss>');
+			fs.writeFileSync(path.resolve(settings.rootDir, settings.distDir, 'rss.xml'), rss.join(''));
+		},
+	},
 ];
 module.exports = hooks;

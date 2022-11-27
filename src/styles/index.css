@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	margin: 0;
+	@apply m-0;
 }
 
 p,
@@ -26,5 +26,9 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
+	@apply m-0;
+}
+
+svg {
+	@apply align-baseline;
 }

@@ -8,29 +8,37 @@
 	@import '../styles/footer.css';
 </style>
 
-<footer class="px-2 sm:px-8 flex flex-col justify-start items-start space-y-2 text-wine">
+<footer class="px-2 sm:px-8 flex flex-col justify-start items-start text-wine">
 	<p class="text-lg text-gray">AcrylicShrimp</p>
-	<div class="pl-2 sm:pl-4 flex flex-col sm:flex-row justify-start item-center text-base">
+	<div class="mt-2 pl-2 sm:pl-4 flex flex-col sm:flex-row justify-start item-center text-base">
 		<div class="flex flex-col justify-start item-start">
 			<p>
+				<span class="align-middle">
 				{@html envelopeSvg}
+				</span>
 				<a class="hover:underline" href="mailto:led789zxpp@naver.com" target="_blank" rel="noopener noreferrer"
 					>led789zxpp@naver.com</a>
 			</p>
 			<p class="mt-1">
+				<span class="align-middle">
 				{@html envelopeSvg}
+				</span>
 				<a class="hover:underline" href="mailto:phyenjun@gmail.com" target="_blank" rel="noopener noreferrer"
 					>phyenjun@gmail.com</a>
 			</p>
 		</div>
 		<div class="mt-8 sm:mt-0 sm:ml-16 flex flex-col justify-start item-start">
 			<p>
+				<span class="align-middle">
 				{@html githubSvg}
+				</span>
 				<a class="hover:underline" href="https://github.com/AcrylicShrimp" target="_blank" rel="noopener noreferrer"
 					>AcrylicShrimp</a>
 			</p>
 			<p class="mt-1">
+				<span class="align-middle">
 				{@html twitterSvg}
+				</span>
 				<a class="hover:underline" href="https://twitter.com/AcrylicShrimp" target="_blank" rel="noopener noreferrer"
 					>AcrylicShrimp</a>
 			</p>

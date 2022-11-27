@@ -14,8 +14,15 @@
 </script>
 
 <svelte:head>
-	<title>ashrimp blog - {data.post.title}</title>
+	<title>{data.post.title} - {settings.title}</title>
 	<link href={`${settings.origin}${request.permalink}index.html`} rel="canonical" />
+	<meta name="description" content={data.post.preview} />
+	<!-- Facebook Meta Tags -->
+	<meta property="og:title" content={data.post.title} />
+	<meta property="og:description" content={data.post.preview} />
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:title" content={data.post.title} />
+	<meta name="twitter:description" content={data.post.preview} />
 </svelte:head>
 
 <article>

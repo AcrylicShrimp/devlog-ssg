@@ -3,8 +3,15 @@
 </script>
 
 <svelte:head>
-	<title>ashrimp blog - not found</title>
+	<title>not found - {settings.title}</title>
 	<link href={`${settings.origin}${request.permalink}index.html`} rel="canonical" />
+	<meta name="description" content="Please double-check the URL and try again!" />
+	<!-- Facebook Meta Tags -->
+	<meta property="og:title" content="not found - {settings.title}" />
+	<meta property="og:description" content="Please double-check the URL and try again!" />
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:title" content="not found - {settings.title}" />
+	<meta name="twitter:description" content="Please double-check the URL and try again!" />
 </svelte:head>
 
 <article>

@@ -5,6 +5,8 @@ const lastUpdatedAt = '2022-05-16';
 
 module.exports = {
 	origin: 'https://blog.ashrimp.dev', // TODO: update this. The URL of your site's root, without a trailing slash
+	title: 'ashrimp blog',
+	description: 'Blog of AcrylicShrimp, full of programming stuff!',
 	lang: 'ko',
 	srcDir: 'src',
 	distDir: 'dist',
@@ -51,7 +53,7 @@ module.exports = {
 				post: async ({ query, request }) => {
 					const post = (await import(path.join(process.cwd(), 'posts', '.gen.js'))).default;
 					return new Date(
-						Math.max(new Date(lastUpdatedAt).getTime(), post.find((post) => (post.slug = request.slug))['modified-at']),
+						Math.max(new Date(lastUpdatedAt).getTime(), post.find((post) => post.slug === request.slug)['modified-at']),
 					);
 				},
 			}, // configurable last update for each route type.

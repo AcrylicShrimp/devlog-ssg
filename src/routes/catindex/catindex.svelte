@@ -5,8 +5,15 @@
 </script>
 
 <svelte:head>
-	<title>ashrimp blog</title>
+	<title>categories - {settings.title}</title>
 	<link href={`${settings.origin}${request.permalink}index.html`} rel="canonical" />
+	<meta name="description" content={settings.description} />
+	<!-- Facebook Meta Tags -->
+	<meta property="og:title" content="categories - {settings.title}" />
+	<meta property="og:description" content={settings.description} />
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:title" content="categories - {settings.title}" />
+	<meta name="twitter:description" content={settings.description} />
 </svelte:head>
 
 <article>

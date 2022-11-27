@@ -12,6 +12,7 @@ module.exports = {
 			post: {
 				slug: post.slug,
 				title: post.title,
+				preview: post.preview,
 				category: post.category,
 				content: post.content,
 				writtenAt: new Date(post['written-at']),

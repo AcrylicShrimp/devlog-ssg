@@ -39,4 +39,15 @@
 		{/if}
 	</header>
 	<Post content={data.post.content} />
+	<section class="mt-16">
+		<script
+			src="https://utteranc.es/client.js"
+			repo="AcrylicShrimp/devlog-comments"
+			issue-term="pathname"
+			label="comment"
+			theme="github-dark"
+			crossorigin="anonymous"
+			async>
+		</script>
+	</section>
 </article>

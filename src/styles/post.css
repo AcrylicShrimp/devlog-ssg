@@ -86,3 +86,7 @@
 .article .math.math-display {
 	@apply text-light;
 }
+
+.utterances {
+	@apply max-w-none;
+}
